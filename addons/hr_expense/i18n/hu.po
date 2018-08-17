@@ -5,7 +5,7 @@
 # Translators:
 # krnkris <krnkris@freemail.hu>, 2016
 # Martin Trigaux <mat@odoo.com>, 2016
-# Oregional <geza.nagy@oregional.hu>, 2016
+# gezza <geza.nagy@oregional.hu>, 2016
 # Kovács Tibor <kovika@gmail.com>, 2016
 # Kisrobert <kisrobi@gmail.com>, 2016
 msgid ""
@@ -1229,6 +1229,12 @@ msgid "The payment method used when the expense is paid by the company."
 msgstr "Az a fizetési mód, melyet a költség kiadására használ a vállalat."
 
 #. module: hr_expense
+#: code:addons/hr_expense/wizard/hr_expense_register_payment.py:35
+#, python-format
+msgid "The payment amount must be strictly positive."
+msgstr ""
+
+#. module: hr_expense
 #: model:ir.ui.view,arch_db:hr_expense.hr_expense_planner
 msgid ""
 "The photo of the receipt and the description of the email will\n"
@@ -1388,7 +1394,7 @@ msgstr ""
 #: code:addons/hr_expense/models/hr_expense.py:425
 #, python-format
 msgid "You cannot delete a posted expense."
-msgstr ""
+msgstr "Nem törölhet könyvelésre feladott kiadásokat."
 
 #. module: hr_expense
 #: code:addons/hr_expense/models/hr_expense.py:106

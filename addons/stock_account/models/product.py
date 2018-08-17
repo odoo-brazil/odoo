@@ -51,6 +51,9 @@ class ProductTemplate(models.Model):
     def _compute_cost_method(self):
         self.cost_method = self.property_cost_method or self.categ_id.property_cost_method
 
+    def _is_cost_method_standard(self):
+        return self.property_cost_method == 'standard'
+
     @api.one
     def _set_cost_method(self):
         return self.write({'property_cost_method': self.cost_method})
@@ -102,7 +105,7 @@ class ProductProduct(models.Model):
         product_accounts = {product.id: product.product_tmpl_id.get_product_accounts() for product in self}
 
         for location in locations:
-            for product in self.with_context(location=location.id, compute_child=False):
+            for product in self.with_context(location=location.id, compute_child=False).filtered(lambda r: r.valuation == 'real_time'):
                 diff = product.standard_price - new_price
                 if float_is_zero(diff, precision_rounding=product.currency_id.rounding):
                     raise UserError(_("No difference between standard price and new price!"))

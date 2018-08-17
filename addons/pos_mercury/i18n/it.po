@@ -73,7 +73,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:pos_mercury.mercury_return
 #: model:ir.ui.view,arch_db:pos_mercury.mercury_transaction
 msgid "Allow"
-msgstr ""
+msgstr "Consenti"
 
 #. module: pos_mercury
 #: model:ir.model,name:pos_mercury.model_account_bank_statement_line
@@ -133,7 +133,7 @@ msgstr ""
 #: code:addons/pos_mercury/static/src/js/pos_mercury.js:161
 #, python-format
 msgid "Connection Lost"
-msgstr ""
+msgstr "Connessione Persa"
 
 #. module: pos_mercury
 #. openerp-web
@@ -147,6 +147,13 @@ msgstr ""
 #: code:addons/pos_mercury/static/src/js/pos_mercury.js:202
 #, python-format
 msgid "Could Not Encrypt Response- Call Provider"
+msgstr ""
+
+#. module: pos_mercury
+#. openerp-web
+#: code:addons/pos_mercury/static/src/js/pos_mercury.js:357
+#, python-format
+msgid "Could not read card"
 msgstr ""
 
 #. module: pos_mercury
@@ -199,6 +206,13 @@ msgstr ""
 #: code:addons/pos_mercury/static/src/js/pos_mercury.js:173
 #, python-format
 msgid "Empty Command String"
+msgstr ""
+
+#. module: pos_mercury
+#. openerp-web
+#: code:addons/pos_mercury/static/src/js/pos_mercury.js:638
+#, python-format
+msgid "Error"
 msgstr ""
 
 #. module: pos_mercury
@@ -602,6 +616,18 @@ msgid "Name of this Mercury configuration"
 msgstr ""
 
 #. module: pos_mercury
+#: code:addons/pos_mercury/models/pos_mercury_transaction.py:35
+#, python-format
+msgid "No Mercury configuration associated with the journal."
+msgstr ""
+
+#. module: pos_mercury
+#: code:addons/pos_mercury/models/pos_mercury_transaction.py:23
+#, python-format
+msgid "No opened point of sale session for user %s found"
+msgstr ""
+
+#. module: pos_mercury
 #. openerp-web
 #: code:addons/pos_mercury/static/src/js/pos_mercury.js:334
 #, python-format
@@ -640,7 +666,7 @@ msgstr ""
 #: code:addons/pos_mercury/static/src/js/pos_mercury.js:460
 #, python-format
 msgid "Partially approved"
-msgstr ""
+msgstr "Parzialmente approvato"
 
 #. module: pos_mercury
 #. openerp-web
@@ -960,7 +986,7 @@ msgstr "ir.autovacuum"
 #. module: pos_mercury
 #: model:ir.model,name:pos_mercury.model_pos_mercury_configuration
 msgid "pos_mercury.configuration"
-msgstr ""
+msgstr "pos_mercury.configuration"
 
 #. module: pos_mercury
 #: model:ir.model,name:pos_mercury.model_pos_mercury_mercury_transaction

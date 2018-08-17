@@ -540,9 +540,9 @@ msgid ""
 "<strong>No bill of materials defined for production:</strong> you need to "
 "create a BoM or indicate that the product can be purchased instead."
 msgstr ""
-"<strong>Geen materialenlijst gedefinieerd voor productie:</strong> u dient "
-"ene materiaallijst aan te maken of aangeven dat het product in plaats "
-"daarvan kan worden ingekocht."
+"<strong>Geen stuklijst gedefinieerd voor productie:</strong> u dient een "
+"stuklijst aan te maken of aangeven dat het product in plaats daarvan kan "
+"worden ingekocht."
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -755,7 +755,7 @@ msgstr "Geavanceerd"
 #. module: stock
 #: selection:stock.config.settings,group_stock_adv_location:0
 msgid "Advanced routing of products using rules"
-msgstr "Geavanceerde routings van producten door middel van regels"
+msgstr "Geavanceerde routes van producten door middel van regels"
 
 #. module: stock
 #: selection:stock.move,procure_method:0
@@ -1159,18 +1159,38 @@ msgstr ""
 "deze te verwijderen."
 
 #. module: stock
+#: model:stock.incoterms,name:stock.incoterm_CIP
+msgid "CARRIAGE AND INSURANCE PAID TO"
+msgstr "Vrachtvrij inclusief verzekering tot"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_CPT
+msgid "CARRIAGE PAID TO"
+msgstr "Vrachtvrij tot"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_CFR
+msgid "COST AND FREIGHT"
+msgstr "Kostprijs en vracht"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_CIF
+msgid "COST, INSURANCE AND FREIGHT"
+msgstr "Kostprijs, verzekering en vracht"
+
+#. module: stock
 #: model:ir.ui.view,arch_db:stock.stock_picking_calendar
 msgid "Calendar View"
 msgstr "Kalenderoverzicht"
 
 #. module: stock
-#: code:addons/stock/models/stock_warehouse.py:396
+#: code:addons/stock/models/stock_warehouse.py:400
 #, python-format
 msgid "Can't find any customer or supplier location."
 msgstr "Kan geen klant of leverancier locatie vinden."
 
 #. module: stock
-#: code:addons/stock/models/stock_warehouse.py:444
+#: code:addons/stock/models/stock_warehouse.py:448
 #, python-format
 msgid "Can't find any generic Make To Order route."
 msgstr "Kan geen algemene 'Maak op order' route vinden."
@@ -1254,7 +1274,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_inventory_line_product_qty
 msgid "Checked Quantity"
-msgstr "Controleer hoeveelheid"
+msgstr "Getelde hoeveelheid"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_move_partially_available
@@ -1380,7 +1400,7 @@ msgstr "Bedrijven"
 #: model:ir.ui.view,arch_db:stock.quant_package_search_view
 #: model:ir.ui.view,arch_db:stock.quant_search_view
 msgid "Company"
-msgstr "Bedijf"
+msgstr "Bedrijf"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_picking_date_done
@@ -1722,6 +1742,41 @@ msgstr "Klant locaties"
 #: selection:stock.picking.type,code:0
 msgid "Customers"
 msgstr "Klanten"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_DAF
+msgid "DELIVERED AT FRONTIER"
+msgstr "Franco grens"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_DAP
+msgid "DELIVERED AT PLACE"
+msgstr "Franco ter plaatse"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_DAT
+msgid "DELIVERED AT TERMINAL"
+msgstr "Franco terminal"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_DDP
+msgid "DELIVERED DUTY PAID"
+msgstr "Franco inclusief rechten"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_DDU
+msgid "DELIVERED DUTY UNPAID"
+msgstr "Franco exclusief rechten"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_DEQ
+msgid "DELIVERED EX QUAY"
+msgstr "Franco af kade (exclusief rechten)"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_DES
+msgid "DELIVERED EX SHIP"
+msgstr "Franco af schip"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_config_settings_module_delivery_dhl
@@ -2204,6 +2259,11 @@ msgid "Dropshipping"
 msgstr "Dropship"
 
 #. module: stock
+#: model:stock.incoterms,name:stock.incoterm_EXW
+msgid "EX WORKS"
+msgstr "Af fabriek"
+
+#. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "Edit its details or add new ones"
 msgstr "Wijzig de details of voeg nieuwe toe"
@@ -2280,6 +2340,21 @@ msgstr "Extra mutatie: "
 #: model:ir.model.fields,help:stock.field_product_removal_method
 msgid "FIFO, LIFO..."
 msgstr "FIFO, LIFO..."
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_FAS
+msgid "FREE ALONGSIDE SHIP"
+msgstr "Vrij langszij schip"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_FCA
+msgid "FREE CARRIER"
+msgstr "Vrachtvrij tot vervoerder"
+
+#. module: stock
+#: model:stock.incoterms,name:stock.incoterm_FOB
+msgid "FREE ON BOARD"
+msgstr "Vrij aan boord"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_config_settings_module_delivery_fedex
@@ -2624,7 +2699,7 @@ msgstr ""
 "in de ontwikkelde delen van de wereld. IJs kan worden gekocht in grote dozen"
 " van supermarkten en kruidenierszaken, in kleinere hoeveelheden van "
 "ijswinkels, en in individuele porties van kleine ijswagens of bestelwagens "
-"bij publieke evenementen."
+"bij openbare evenementen."
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_quant_name
@@ -2878,7 +2953,7 @@ msgstr ""
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_inventory_exhausted
 msgid "Include Exhausted Products"
-msgstr "Voeg uitgeputte productie toe"
+msgstr "Inclusief producten met nul voorraad"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_product_product_incoming_qty
@@ -3015,6 +3090,24 @@ msgid ""
 msgstr ""
 "Interne referentienummer indien deze afwijkt van het serie/partijnummer van "
 "de fabrikant."
+
+#. module: stock
+#: code:addons/stock/models/product.py:257
+#, python-format
+msgid "Invalid domain left operand %s"
+msgstr "Ongeldige linker operand %s"
+
+#. module: stock
+#: code:addons/stock/models/product.py:259
+#, python-format
+msgid "Invalid domain operator %s"
+msgstr "Ongeldige domein operator %s"
+
+#. module: stock
+#: code:addons/stock/models/product.py:261
+#, python-format
+msgid "Invalid domain right operand %s"
+msgstr "Ongeldige rechter operand %s"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_inventory_category_id
@@ -3725,7 +3818,7 @@ msgstr "Beheer meerdere magazijnen"
 #. module: stock
 #: model:res.groups,name:stock.group_stock_manager
 msgid "Manager"
-msgstr "Beheerder"
+msgstr "Manager"
 
 #. module: stock
 #: selection:stock.location.path,auto:0
@@ -4011,7 +4104,7 @@ msgstr "Geen tracering"
 #. module: stock
 #: selection:stock.config.settings,group_stock_adv_location:0
 msgid "No automatic routing of products"
-msgstr "Geen automatische productorders van producten"
+msgstr "Geen automatische routes van producten"
 
 #. module: stock
 #: code:addons/stock/models/stock_picking.py:823
@@ -4089,8 +4182,8 @@ msgid ""
 "Number of days after the orderpoint is triggered to receive the products or "
 "to order to the vendor"
 msgstr ""
-"Aantal dagen na het orderpunt is afgegaan om producten te ontvangen of een "
-"order te maken bij de leverancier"
+"Aantal dagen nadat de aanvulregel is uitgevoerd om producten te ontvangen of"
+" een order te maken bij de leverancier"
 
 #. module: stock
 #: model:ir.model.fields,help:stock.field_stock_location_path_delay
@@ -5236,7 +5329,7 @@ msgstr "Aantal te late pickings"
 #: model:ir.ui.view,arch_db:stock.view_move_search
 #: model:ir.ui.view,arch_db:stock.view_picking_internal_search
 msgid "Ready"
-msgstr "Klaar"
+msgstr "Gereed"
 
 #. module: stock
 #: model:ir.model.fields,field_description:stock.field_stock_move_product_qty
@@ -6247,7 +6340,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "The RFQ becomes a Purchase Order and a Transfer Order is created"
 msgstr ""
-"De offerteaanvraag of RfQ wordt een inkooporder, en een transferorder wordt "
+"De offerteaanvraag wordt een inkooporder, en een magazijnverplaatsing wordt "
 "aangemaakt"
 
 #. module: stock
@@ -6410,7 +6503,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:stock.inventory_planner
 msgid "The quotation becomes a Sale Order and a Transfer Order is created"
 msgstr ""
-"De offerte veranderd in een Verkoop Order en een Transfer Order wordt "
+"De offerte wijzigt in een verkooporder en een magazijnverplaatsing wordt "
 "aangemaakt."
 
 #. module: stock
@@ -7286,7 +7379,7 @@ msgstr ""
 "Wij handelen het hele importproces voor u \n"
 "af: u hoeft enkel het CSV-bestand met al\n"
 "uw productgegevens naar uw Odoo project-\n"
-"beheerder te versturen."
+"manager te versturen."
 
 #. module: stock
 #: model:ir.ui.view,arch_db:stock.inventory_planner
@@ -7465,7 +7558,7 @@ msgid ""
 "may deactivate this product."
 msgstr ""
 "Het is niet mogelijk de maateenheid van een product te wijzigen welke al is "
-"gebruikt in een voorraad mutatie. Indien u de maateenheid wilt veranderen, "
+"gebruikt in een voorraad mutatie. Indien u de maateenheid wilt wijzigen, "
 "kunt u dit product de-activeren."
 
 #. module: stock
@@ -7501,7 +7594,14 @@ msgstr ""
 "fase is."
 
 #. module: stock
-#: code:addons/stock/models/stock_inventory.py:352
+#: code:addons/stock/models/stock_scrap.py:72
+#, python-format
+msgid "You cannot delete a scrap which is done."
+msgstr ""
+"Het is niet mogelijk een afkeuring te verwijderen welke al verwerkt is."
+
+#. module: stock
+#: code:addons/stock/models/stock_inventory.py:374
 #, python-format
 msgid ""
 "You cannot have two inventory adjustements in state 'in Progess' with the "
@@ -7541,6 +7641,13 @@ msgid ""
 msgstr ""
 "Het is niet mogelijk een negatieve product hoeveelheid in te voeren op een telling regel:\n"
 "\t%s - Hvh: %s"
+
+#. module: stock
+#: code:addons/stock/models/stock_production_lot.py:37
+#, python-format
+msgid "You are not allowed to create a lot for this picking type"
+msgstr ""
+"Het is toegestaan om een partijnummer aan te maken voor deze verzamelwijze"
 
 #. module: stock
 #: code:addons/stock/models/stock_move.py:919
@@ -7631,6 +7738,12 @@ msgstr ""
 #, python-format
 msgid "You may only return Done pickings"
 msgstr "Je kunt alleen leveringen welke gereed zijn retourneren"
+
+#. module: stock
+#: code:addons/stock/models/stock_inventory.py:21
+#, python-format
+msgid "You must define a warehouse for the company: %s."
+msgstr "U moet een magazijn aanmaken voor het bedrijf: %s."
 
 #. module: stock
 #: code:addons/stock/models/stock_move.py:553

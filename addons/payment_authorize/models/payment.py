@@ -8,7 +8,7 @@ import logging
 import time
 import urlparse
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.addons.payment.models.payment_acquirer import ValidationError
 from odoo.addons.payment_authorize.controllers.main import AuthorizeController
 from odoo.tools.float_utils import float_compare
@@ -148,12 +148,23 @@ class TxAuthorize(models.Model):
     # --------------------------------------------------
 
     @api.model
+    def create(self, vals):
+        # The reference is used in the Authorize form to fill a field (invoiceNumber) which is
+        # limited to 20 characters. We truncate the reference now, since it will be reused at
+        # payment validation to find back the transaction.
+        if 'reference' in vals and 'acquirer_id' in vals:
+            acquier = self.env['payment.acquirer'].browse(vals['acquirer_id'])
+            if acquier.provider == 'authorize':
+                vals['reference'] = vals.get('reference', '')[:20]
+        return super(TxAuthorize, self).create(vals)
+
+    @api.model
     def _authorize_form_get_tx_from_data(self, data):
         """ Given a data dict coming from authorize, verify it and find the related
         transaction record. """
         reference, trans_id, fingerprint = data.get('x_invoice_num'), data.get('x_trans_id'), data.get('x_MD5_Hash')
         if not reference or not trans_id or not fingerprint:
-            error_msg = 'Authorize: received data with missing reference (%s) or trans_id (%s) or fingerprint (%s)' % (reference, trans_id, fingerprint)
+            error_msg = _('Authorize: received data with missing reference (%s) or trans_id (%s) or fingerprint (%s)') % (reference, trans_id, fingerprint)
             _logger.info(error_msg)
             raise ValidationError(error_msg)
         tx = self.search([('reference', '=', reference)])
@@ -333,6 +344,6 @@ class PaymentToken(models.Model):
                     'acquirer_ref': res.get('payment_profile_id'),
                 }
             else:
-                raise ValidationError('The Customer Profile creation in Authorize.NET failed.')
+                raise ValidationError(_('The Customer Profile creation in Authorize.NET failed.'))
         else:
             return values
